@@ -1,20 +1,29 @@
 <div class="row">
-    <div class="col-md-6">
-      <form #f="ngForm" (ngSubmit)="save(f.value)">
-        <div class="form-group">
-          <label for="personnelNumber">Personnel #:</label>
-          <input  #personnelNumber="ngModel" id="personnelNumber" type="number" class="form-control" placeholder="Personnel number" required>
-          <div class="aler alert-danger" >
-            Personnel number is required.
-          </div>
+  <div class="col-md-6">
+      <form>
+        <div class="form-group p">
+          <p>Employee Data:</p>
         </div>
         <div class="form-group">
-            <label for="name">Name:</label>
-            <input id="name" type="text" class="form-control" placeholder="Employee name">
+          <label for="personnel">Personnel #:</label>
+          <input #personnel="ngModel" ngModel name="personnel" id="personnel" type="number" class="form-control" placeholder="Personnel number" required>
+          <div class="aler alert-danger" *ngIf="personnel.touched && personnel.invalid">
+              (after entering this number the below info will populate from SAP)
+          </div>
+        </div> 
+        <div class="form-group">
+            <label for="employeename">Name:</label>
+            <input #employeename="ngModel" ngModel name="employeename" id="employeename" type="text" class="form-control" placeholder="Employee name" required>
+            <div class="aler alert-danger" *ngIf="employeename.touched && employeename.invalid">
+                (auto populate from SAP)
+            </div>
         </div>
         <div class="form-group">
             <label for="doh">DOH:</label>
-            <input id="doh" type="text" class="form-control" placeholder="Date of hire">
+            <input #doh="ngModel" ngModel name="doh" id="doh" type="text" class="form-control" placeholder="Date of hire" required>
+            <div class="aler alert-danger" *ngIf="doh.touched && doh.invalid">
+                (auto populate from SAP)
+            </div>
         </div>
         <div class="form-group">
             <label for="phone">Phone #:</label>
@@ -25,20 +34,83 @@
             <input id="address" type="text" class="form-control" placeholder="Address">
         </div>
         <div class="form-group">
-            <label for="job-title">Job Title:</label>
-            <input id="job-title" type="text" class="form-control" placeholder="Job Title">
+            <label for="jobTitle">Job Title:</label>
+            <input #jobTitle="ngModel" ngModel name="jobTitle"  id="jobTitle" type="text" class="form-control" placeholder="Job Title" required>
+            <div class="aler alert-danger" *ngIf="jobTitle.touched && jobTitle.invalid">
+                (auto populate from SAP)
+            </div>
         </div>
         <div class="form-group">
             <label for="location">Location:</label>
-            <input id="location" type="text" class="form-control" placeholder="Location">
+            <input #location="ngModel" ngModel name="location" id="location" type="text" class="form-control" placeholder="Location" required>
+            <div class="aler alert-danger" *ngIf="location.touched && location.invalid">
+                (auto populate from SAP)
+            </div>
         </div>
         <div class="form-group">
             <label for="leaves-analyst">Leaves Analyst:</label>
-            <input id="leaves-analyst" type="text" class="form-control" placeholder="Leaves Analyst">
+            <select #category="ngModel" [(ngModel)]="leavesAnalyst" name="leavesAnalyst" id="leavesAnalyst" class="form-control" required>
+              <option value=""></option>
+              <option value="dennis">Dennis</option>
+              <option value="jeremie">Jeremie</option>
+              <option value="mark">Mark</option>
+              <option value="robert">Robert</option>
+                <!-- <option *ngFor="let c of categories$ | async" [value]="c.$key">
+                  {{ c.name }}
+                </option> -->
+            </select>
         </div>
         <div class="form-group">
-            <label for="data-entry-date">Data Entry Date:</label>
-            <input id="data-entry-date" type="text" class="form-control" placeholder="Data Entry Date">
+            <label for="dataEntryDate">Data Entry Date:</label>
+            <input #dataEntryDate="ngModel" ngModel name="dataEntryDate" id="dataEntryDate" type="text" class="form-control" placeholder="Data Entry Date" required>
+            <div class="aler alert-danger" *ngIf="dataEntryDate.touched && dataEntryDate.invalid">
+                (auto populate on original entry date)
+            </div>
         </div>
-</form>
-</div>
+    </form>
+  </div>
+  <div class="col-md-6">
+      <div class="form-group p">
+          <p>File Summary:</p>
+      </div>
+      <div class="form-group">
+          <label for="typeOfLeave">Type of Leave: FMLA</label>
+          <!-- <input disabled id="typeOfLeave" type="text" class="form-control" placeholder="FMLA"> -->
+      </div>
+      <div class="form-group">
+          <label for="startDate">Start Date:</label>
+          <input disabled id="startDate" type="text" class="form-control" placeholder="Start date">
+      </div>
+      <div class="form-group">
+          <label for="endData">End Date:</label>
+          <input disabled id="endData" type="text" class="form-control" placeholder="End date">
+      </div>
+      <div><br></div>
+      <div class="form-group">
+          <label for="typeOfLeave">Type of Leave: ADA</label>
+          <!-- <input disabled id="typeOfLeave" type="text" class="form-control" placeholder="ADA"> -->
+      </div>
+      <div class="form-group">
+          <label for="startDate">Start Date:</label>
+          <input disabled id="startDate" type="text" class="form-control" placeholder="Start date">
+      </div>
+      <div class="form-group">
+          <label for="endData">End Date:</label>
+          <input disabled id="endData" type="text" class="form-control" placeholder="End date">
+      </div>
+      <div><br></div>
+      <div class="form-group">
+          <label for="typeOfLeave">Type of Leave: Workers' Comp</label>
+          <!-- <input disabled id="typeOfLeave" type="text" class="form-control" placeholder="ADA"> -->
+      </div>
+      <div class="form-group">
+          <label for="startDate">Start Date:</label>
+          <input disabled id="startDate" type="text" class="form-control" placeholder="Start date">
+      </div>
+      <div class="form-group">
+          <label for="endData">End Date:</label>
+          <input disabled id="endData" type="text" class="form-control" placeholder="End date">
+      </div>
+      <div><br></div>
+  </div>
+</div>  

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" print-section id="printSectionId">
   <div class="col-md-6">
       <form action="" class="form-horizontal">
         <div>
@@ -67,6 +67,9 @@
             <div class="aler alert-danger" *ngIf="dataEntryDate.touched && dataEntryDate.invalid">
                 (auto populate on original entry date)
             </div>
+        </div>
+        <div><button class="print"  (click)="print('printSectionId')">
+            Print</button>
         </div>
     </form>
   </div>

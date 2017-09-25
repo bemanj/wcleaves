@@ -1,3 +1,191 @@
-<p>
-  fmla works!
-</p>
+<div class="container">
+  <form action="" class="form-horizontal">
+    <div class="row">
+    <div class="col-6">
+        <div>
+          <p>FMLA Paperwork</p>
+        </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-5"><label for="personnel">Date paperwork Mailed:</label></div>
+              <div class="col"><input disabled id="startDate" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-5">
+                  <div><label for="dueDate">Due Date:</label></div>
+              </div>
+              <div class="col">
+                  <div><input #dueDate="ngModel" ngModel name="dueDate" id="dueDate" type="number" class="form-control" placeholder="MM/dd/yyyy" required></div>
+              </div>
+            </div>
+            <div class="aler alert-danger" *ngIf="dueDate.touched && dueDate.invalid">
+              (auto populate 15 days from date mailed)
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-7">
+                  <label for="paperworkReceived">Paperwork Received: Yes/No</label>
+              </div>
+              <div class="col">
+                  <select #category="ngModel" [(ngModel)]="paperworkReceived" name="paperworkReceived" id="paperworkReceived" class="form-control" required>
+                      <option value=""></option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                        <!-- <option *ngFor="let c of categories$ | async" [value]="c.$key">
+                          {{ c.name }}
+                        </option> -->
+                    </select>
+              </div>
+            </div>
+            
+            
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-5">
+                <label for="paperworkReceivedDate">Date paperwork Received:</label>
+            </div>
+            <div class="col">
+                <input #paperworkReceivedDate="ngModel" ngModel name="paperworkReceivedDate" id="paperworkReceivedDate" type="number" class="form-control" placeholder="MM/dd/yyyy" required>
+                <!-- <div class="aler alert-danger" *ngIf="paperworkReceivedDate.touched && paperworkReceivedDate.invalid">
+                  (auto populate 15 days from date mailed)
+                </div> -->
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+      <label for="typeOfLeave">WAY Letter</label>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-5"><label for="startDate">Date Sent:</label></div>
+               <div class="col"><input disabled id="startDate" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-5"><label for="endData">Date Expired:</label></div>
+              <div class="col"><input disabled id="endData" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+          </div>
+        </div>
+      <label for="typeOfLeave">Maternity Info</label>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-5"><label for="startDate">Expected Delivery Date:</label></div>
+            <div class="col"><input disabled id="startDate" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-5"><label for="endData">Actual Delivery Date:</label></div>
+            <div class="col"><input disabled id="endData" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+          </div>
+        </div>
+    </div>
+  </div>  
+     
+  <div class="row">
+    <div class="col-4">
+        <label for="typeOfLeave">Continuos</label>
+        <div class="form-group">
+            <div class="row">
+              <div class="col-5"><label for="startDate">Last Day Worked:</label></div>
+              <div class="col"><input disabled id="startDate" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+            </div>
+          </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-5"><label for="startDate">Start Date:</label></div>
+            <div class="col"><input disabled id="startDate" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-5"><label for="endData">End Date:</label></div>
+            <div class="col"><input disabled id="endData" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+          </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <label for="typeOfLeave">Intermittent</label>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-5"><label for="endData">Start Date:</label></div>
+            <div class="col"><input disabled id="endData" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+              <div class="col-5"><label for="endData">End Date:</label></div>
+              <div class="col"><input disabled id="endData" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+            </div>
+          </div>
+    </div>
+    <div class="col-4">
+        <label for="typeOfLeave">Reduced Schedule</label>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-5"><label for="startDate">Start Date:</label></div>
+            <div class="col"><input disabled id="startDate" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-5"><label for="endData">End Date:</label></div>
+            <div class="col"><input disabled id="endData" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-7">
+        <input id="endData" type="text" class="form-control" placeholder="Notes">
+    </div>
+    <div class="col">
+        <div class="form-group">
+            <div class="row">
+              <div class="col-5"><label for="startDate">Medical Note Expires:</label></div>
+              <div class="col"><input disabled id="startDate" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-5"><label for="endData" style="font-color:red">Follow Up Date:</label></div>
+              <div class="col"><input disabled id="endData" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+            </div>
+          </div>
+          <div class="form-group">
+              <div class="row">
+                <div class="col-5"><label for="endData">Actual Return to Work Date:</label></div>
+                <div class="col"><input disabled id="endData" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                  <div class="col-5"><label for="endData">Term Date:</label></div>
+                  <div class="col"><input disabled id="endData" type="text" class="form-control" placeholder="MM/dd/yyyy"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-5"><label for="paperworkReceived">File Closed: Yes/No</label></div>
+                <div class="col">
+                  <select #category="ngModel" [(ngModel)]="paperworkReceived" name="paperworkReceived" id="paperworkReceived" class="form-control" required>
+                    <option value=""></option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                      <!-- <option *ngFor="let c of categories$ | async" [value]="c.$key">
+                        {{ c.name }}
+                      </option> -->
+                  </select>
+                </div>
+              </div>
+              
+              
+    </div>
+  </div>
+  </form>
+</div>

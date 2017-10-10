@@ -12,6 +12,7 @@ import { FmlaComponent } from './fmla/fmla.component';
 import { AdaComponent } from './ada/ada.component';
 import { WorkersCompComponent } from './workers-comp/workers-comp.component';
 import { AdminEmployeeInfoComponent } from './admin/admin-employee-info/admin-employee-info.component';
+import { PrintComponent } from './print/print.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AdminEmployeeInfoComponent } from './admin/admin-employee-info/admin-em
     FmlaComponent,
     AdaComponent,
     WorkersCompComponent,
-    AdminEmployeeInfoComponent
+    AdminEmployeeInfoComponent,
+    PrintComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { AdminEmployeeInfoComponent } from './admin/admin-employee-info/admin-em
       { path: 'ada', component: AdaComponent },
       { path: 'workers-comp', component: WorkersCompComponent },
       { path: 'admin/admin-employee-infor', component: AdminEmployeeInfoComponent },
+      { path: 'app-print', component: PrintComponent },
     ])
   ],
   providers: [],

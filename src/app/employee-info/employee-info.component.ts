@@ -24,11 +24,7 @@ export class EmployeeInfoComponent implements OnInit {
               </style>
             </head>
         <body onload="window.print();window.close()">${printContents}
-        <script type="text/javascript" src="inline.bundle.js"></script>
-        <script type="text/javascript" src="polyfills.bundle.js"></script>
-        <script type="text/javascript" src="styles.bundle.js"></script>
-        <script type="text/javascript" src="vendor.bundle.js"></script>
-        <script type="text/javascript" src="main.bundle.js"></script>
+       
         </body>
         
           </html>`
@@ -40,3 +36,9 @@ export class EmployeeInfoComponent implements OnInit {
   }
 
 }
+
+// <script type="text/javascript" src="inline.bundle.js"></script>
+// <script type="text/javascript" src="polyfills.bundle.js"></script>
+// <script type="text/javascript" src="styles.bundle.js"></script>
+// <script type="text/javascript" src="vendor.bundle.js"></script>
+// <script type="text/javascript" src="main.bundle.js"></script>
